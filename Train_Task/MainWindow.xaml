@@ -1,0 +1,196 @@
+﻿<Window x:Class="Train_Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Train_Task"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="380" Width="470">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF3F3F3F" Offset="1"/>
+            <GradientStop Color="#FF3C3737"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                
+
+                
+            </StackPanel>
+            
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+
+                <DataGrid x:Name="grid" Height="330" Width="250" SelectedIndex="0" BorderBrush="Black"  RowBackground="LightYellow" AlternatingRowBackground="LightBlue">
+                    
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                        
+                           
+                        
+                    </DataGrid.Resources>
+                    <DataGrid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF3F3F3F" Offset="1"/>
+                            <GradientStop Color="#FF3C3737"/>
+                        </LinearGradientBrush>
+                    </DataGrid.Background>
+                </DataGrid>
+
+                <TextBox x:Name="edt"  HorizontalAlignment="Left" Height="255" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="18" IsUndoEnabled="True" Width="1"  SelectionBrush="#FFFF0025" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="Bold" >
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF8C8989"/>
+                            <GradientStop Color="#FF7C7C7C" Offset="1"/>
+                        </RadialGradientBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <StackPanel Margin="10,0,0,0">
+                    <TextBlock Foreground="White" Text="Сортировка" FontSize="18" TextAlignment="Center" />
+                    <TextBlock Foreground="White" Text="Город" />
+                    <TextBox x:Name="edtTrain"  HorizontalAlignment="Left" Height="30" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="18" IsUndoEnabled="True" Width="180"  SelectionBrush="#FFFF0025" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Foreground="White" Text="Saratov" FontWeight="Bold">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF8C8989"/>
+                                <GradientStop Color="#FF7C7C7C" Offset="1"/>
+                            </RadialGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                    <Button x:Name="Train_Connect" Content="Город" Margin="0,5,0,0" Width="180" Height="34" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" BorderBrush="{x:Null}" Foreground="White" Click="Train_Connect_Click" FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FFF89B29"/>
+                                <GradientStop Color="#FFFF0F7B" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <TextBlock Foreground="White" Text="Номер поезда" />
+                    <TextBox x:Name="edtValue"  HorizontalAlignment="Left" Height="30" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="18" IsUndoEnabled="True" Width="180"  SelectionBrush="#FFFF0025" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="Bold">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF8C8989"/>
+                                <GradientStop Color="#FF7C7C7C" Offset="1"/>
+                            </RadialGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                    <Button x:Name="Value_Connect" Content="Номер поезда" Margin="0,5,0,0" Width="180" Height="34"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" BorderBrush="{x:Null}" Foreground="White" Click="Value_Connect_Click" FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FFF89B29"/>
+                                <GradientStop Color="#FFFF0F7B" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <TextBlock Foreground="White" Text="Колличество" />
+                    <TextBox x:Name="Value_n"  HorizontalAlignment="Left" Height="30" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="18" IsUndoEnabled="True" Width="180"  SelectionBrush="#FFFF0025" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Foreground="White" Text="5" FontWeight="Bold">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF8C8989"/>
+                                <GradientStop Color="#FF7C7C7C" Offset="1"/>
+                            </RadialGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    
+                    <Button x:Name="res" Content="Обновить" Margin="0,5,0,0" Width="180" Height="34" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" BorderBrush="{x:Null}" Foreground="White" Click="reset_Click" FontWeight="Bold" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FFF89B29"/>
+                                <GradientStop Color="#FFFF0F7B" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                    <Button x:Name="reset" Content="Все маршруты" Margin="0,5,0,0" Width="180" Height="34" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" BorderBrush="{x:Null}" Foreground="White" Click="reset_Click_1" FontWeight="Bold"  >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FFF89B29"/>
+                                <GradientStop Color="#FFFF0F7B" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+
+                </StackPanel>
+                
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>
